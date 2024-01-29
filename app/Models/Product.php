@@ -26,4 +26,13 @@ class Product extends Model
     {
         return $this->belongsToMany(Category::class,'ProductCategory');
     }
+    public function media()
+    {
+        return $this->morphMany(Media::class, 'mediable');
+    }
+    public function carts()
+    {
+        return $this->belongsToMany(Cart::class);
+    }
+
 }

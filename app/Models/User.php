@@ -83,7 +83,15 @@ class User extends Authenticatable
     {
         return $this->hasMany(Cart::class);
     }
+    public function media()
+    {
+        return $this->morphMany(Media::class, 'mediable');
+    }
+    public function cart()  {
 
+        return $this->hasOne(Cart::class);
+        
+    }
 
 
 }
